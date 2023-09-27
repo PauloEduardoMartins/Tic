@@ -20,7 +20,7 @@ export default function Admin(){
           <Menu2 username={username}/>
         </div> 
           <div className="flex flex-col items-center justify-center ">
-        <div className="max-w-md mx-10 my-5 mb-4">
+        <div className="max-w-md mx-10 my-5 mb-4 bg-[#0e0825]">
                 Pagina do admin
             </div>
         </div>

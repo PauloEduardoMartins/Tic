@@ -7,7 +7,7 @@ export default function Menu( {username}: MenuProps){
     return (
     <div>
         <div className="bg-gradient-to-r from-[#3e4365] to-[#6283A1] flex flex-col w-64 h-screen overflow-y-auto px-4 py-8 border-r">
-        <h2 className="text-[#0B1661] font-semibold text-center text-3xl"> [Adicione logo aqui]</h2>
+        <h2 className="text-[#0B1661] font-semibold text-center text-3xl"> Creche Nossa Senhora da Conceição</h2>
         <h3 className="text-[#0B1661] font-semibold text-center text-2xl mt-16"> {username} </h3>
         <div className="flex items-center justify-between mt-6">
             <aside> 

@@ -18,3 +18,11 @@ export function Produto(prod: ProdutoProps) {
     )
 }
 
+
+function App() {
+  return (
+    <Produto nome="Product Name" descricao="Product Description" origem="Product Origin" qtde={10} />
+  );
+}
+
+export default App;

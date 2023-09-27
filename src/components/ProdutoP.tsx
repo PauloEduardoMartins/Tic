@@ -266,6 +266,7 @@ export function ProdutoP() {
                     <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.id}</td>
                     <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.name}</td>
                     <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.description}</td>
+                    <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.origem}</td>
                     <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.qty}</td>
                     <td className="border border-gray-300 px-4 py-2">
                       <button onClick={() => handleEdit(product)}> 

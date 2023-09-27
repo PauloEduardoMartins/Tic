@@ -18,83 +18,28 @@
   ],
   "products": [
     {
-      "name": "12",
-      "description": "12",
-      "price": 12,
-      "qty": 12,
-      "id": 5
+      "name": "XXX",
+      "description": "123",
+      "qty": 1,
+      "origem": "rtghjk,l.",
+      "id": 11
     },
     {
-      "name": "aasdasdad",
-      "description": "",
-      "price": 0,
-      "qty": 0,
-      "id": 7
-    },
-    {
-      "name": "aasdasdad",
-      "description": "",
-      "price": 0,
-      "qty": 0,
-      "id": 8
-    },
-    {
-      "name": "aasdasdad",
-      "description": "",
-      "price": 0,
-      "qty": 0,
-      "id": 9
-    },
-    {
-      "name": "aasdasdad",
-      "description": "",
-      "price": 0,
-      "qty": 0,
-      "id": 10
+      "name": "Teste",
+      "description": "Descrição",
+      "qty": 1,
+      "origem": "Origem",
+      "id": 12
     }
   ],
-  "orders": [
+  "notes": [
     {
       "id": 1,
-      "product_id": 1,
-      "qty": 10,
-      "price": 1,
-      "type": "buy"
+      "content": "This is a sample note 1."
     },
     {
       "id": 2,
-      "product_id": 2,
-      "qty": 1,
-      "price": 2,
-      "type": "sell"
-    },
-    {
-      "product_id": 2,
-      "qty": 10,
-      "price": 2,
-      "type": "buy",
-      "id": 3
-    },
-    {
-      "product_id": 2,
-      "qty": 2,
-      "price": 2,
-      "type": "buy",
-      "id": 4
-    },
-    {
-      "product_id": 3,
-      "qty": 50,
-      "price": 10,
-      "type": "sell",
-      "id": 5
-    },
-    {
-      "product_id": 1,
-      "qty": 0,
-      "price": 0,
-      "type": "buy",
-      "id": 6
+      "content": "This is a sample note 2."
     }
   ]
 }
