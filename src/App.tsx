@@ -1,4 +1,5 @@
 import Admin from './components/Admin'
+import Ajuda from './components/Ajuda'
 import Necessidades from './components/Necessidades'
 import Login from './components/Login'
 import AdicionarItens from './components/AdicionarItens'
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/produto" element={<ProdutoP />} />
           <Route path="/admin" element={<Admin/>}/>
+          <Route path="/ajuda" element={<Ajuda/>}/>
           <Route path="/Necessidades" element={<Necessidades/>}/>
           <Route path="/adicionarItens" element={<AdicionarItens/>}/>
         </Routes>

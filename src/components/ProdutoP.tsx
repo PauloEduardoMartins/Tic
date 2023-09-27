@@ -10,14 +10,13 @@ interface ProdutoProps { // tipo de dado
   id: number,
   name: string,
   description: string,
-  price: number,
-  qty: number
+  qty: number,
+  origem: string
 }
 
 interface OrderProps { // tipo de dado
   id: number,
   product_id: number,
-  price: number,
   qty: number,
   type: string
 }
@@ -37,8 +36,8 @@ export function ProdutoP() {
   // variáveis de estado para os campos do formulário
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
-  const [price, setPrice] = useState(0)
   const [qty, setQty] = useState(0)
+  const [origem, setOrigem] = useState('')
   // diferencia se vai inserir (id = 0) ou editar (id não for 0) um produto
   const [id, setId] = useState(0)
 
@@ -78,16 +77,16 @@ export function ProdutoP() {
       produto = {
         name,
         description,
-        price,
-        qty
+        qty,
+        origem
       }
     } 
     else {
       produto = { // atualiza
         name,
         description,
-        price,
-        qty
+        qty, 
+        origem
       }
     }
     let url
@@ -159,8 +158,8 @@ export function ProdutoP() {
     const handleEdit = (product: ProdutoProps) => {
       setName(product.name)
       setDescription(product.description)
-      setPrice(product.price)
       setQty(product.qty)
+      setOrigem(product.origem)
       console.log(product.id)
       setId(product.id) // vai nos ajudar na criação/edição do produto
     }
@@ -209,15 +208,15 @@ export function ProdutoP() {
           {/* formulário para cadastro de um produto */}
           <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-4">
             <div>
-              <label htmlFor="name" className="text-[#0B1661] text-1xl block font-bold mb-2">
+              <label htmlFor="name" className="text-[#0B1661] text-xl block font-bold mb-2">
                 Nome
               </label>
               <input type="text" id="name" value={name} 
                      onChange={ (e) => setName(e.target.value) } 
-                     className="w-full text-[#0B1661] pl-3 border  border-gray-300 rounded-full bg-[#C0D8ED] shadow-sm mb-2" />
+                     className="pb-1.5  pt-1.5 w-full text-[#0B1661] pl-3 border  border-gray-300 rounded-full bg-[#C0D8ED] shadow-sm mb-2" />
             </div>
             <div>
-              <label htmlFor="description" className="text-[#0B1661] text-1xl block font-bold mb-2">
+              <label htmlFor="description" className="text-[#0B1661] text-xl block font-bold mb-2">
                 Descrição
               </label>
               <textarea id="description" value={description}
@@ -225,23 +224,23 @@ export function ProdutoP() {
                         className="w-full text-[#0B1661] pl-3 border border-gray-300 rounded-lg bg-[#C0D8ED] shadow-sm mb-2" />
             </div>
             <div>
-              <label htmlFor="price" className="text-[#0B1661] text-1xl block font-bold mb-2">
-                Preço
+              <label htmlFor="origem" className="text-[#0B1661] text-xl block font-bold mb-2">
+                Origem
               </label>
-              <input type="number" id="price" value={price}
-                      onChange={ (e) => setPrice(Number(e.target.value)) }
-                      className="w-full text-[#0B1661] pl-3 border border-gray-300 rounded-full bg-[#C0D8ED] shadow-sm mb-2" />
+              <input type="text" id="origem" value={origem} 
+                     onChange={ (e) => setOrigem(e.target.value) } 
+                     className="pb-1.5  pt-1.5 w-full text-[#0B1661] pl-3 border  border-gray-300 rounded-full bg-[#C0D8ED] shadow-sm mb-2" />
             </div>
-            <div>
-              <label htmlFor="qty" className="text-[#0B1661] text-1xl block font-bold mb-2">
+            <div className="pb-8">
+              <label htmlFor="qty" className="text-[#0B1661] text-xl block font-bold mb-2">
                 Quantidade 
               </label>
               <input type="number" id="qty" value={qty}
                       onChange={ (e) => setQty(Number(e.target.value))}
-                      className="w-full text-[#0B1661] pl-3 border border-gray-300 rounded-full bg-[#C0D8ED] shadow-sm mb-2" />
+                      className="pb-1.5  pt-1.5 w-full text-[#0B1661] pl-3 border border-gray-300 rounded-full bg-[#C0D8ED] shadow-sm mb-2" />
             </div>
             <button type="submit" 
-              className="w-full bg-blue-500 text-white font-bold rounded">
+              className="w-full bg-[#0B1661] text-white font-bold rounded">
               Criar/Editar Produto
             </button>
           </form>
@@ -249,26 +248,25 @@ export function ProdutoP() {
           <h2 className="font-bold mb-4"> Lista de Produtos </h2>
           <table className="w-full border border-gray-300">
             <thead>
-              <tr className="bg-gray-200">
-                <th className="border border-gray-300 px-4 py-2">ID</th>
-                <th className="border border-gray-300 px-4 py-2">Nome</th>
-                <th className="border border-gray-300 px-4 py-2">Descrição</th>
-                <th className="border border-gray-300 px-4 py-2">Preço</th>
-                <th className="border border-gray-300 px-4 py-2">Quantidade</th>
-                <th className="border border-gray-300 px-4 py-2">Editar</th>
-                <th className="border border-gray-300 px-4 py-2">Remove</th>
-                <th className="border border-gray-300 px-4 py-2">Compra</th>
+              <tr className="bg-[#0B1661]">
+               <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >ID</th>
+                <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >Nome</th>
+                <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >Descrição</th>
+                <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >Origem</th>
+                <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >Quantidade</th>
+                <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >Editar</th>
+                <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >Remove</th>
+                <th className="border border-gray-300 px-4 py-2 text-[#F4F7FF] " >Notificação</th>
               </tr>
             </thead>
             <tbody>
               {
                 products.map( (product) => (
                   <tr key={product.id}>
-                    <td className="border border-gray-300 px-4 py-2">{product.id}</td>
-                    <td className="border border-gray-300 px-4 py-2">{product.name}</td>
-                    <td className="border border-gray-300 px-4 py-2">{product.description}</td>
-                    <td className="border border-gray-300 px-4 py-2">{product.price}</td>
-                    <td className="border border-gray-300 px-4 py-2">{product.qty}</td>
+                    <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.id}</td>
+                    <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.name}</td>
+                    <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.description}</td>
+                    <td className="border border-gray-300 px-4 py-2 text-[#0B1661] ">{product.qty}</td>
                     <td className="border border-gray-300 px-4 py-2">
                       <button onClick={() => handleEdit(product)}> 
                         <MdMode size={20}/>

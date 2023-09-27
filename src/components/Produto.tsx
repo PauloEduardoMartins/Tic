@@ -1,10 +1,10 @@
-
-// vamos definir as props (propriedades) do componente Produto
+// vamos definir as props (propriedades) do componente Produto}
+//Validade e Data de inserção ainda não implementados
 interface ProdutoProps {
     nome: string,
     descricao: string,
-    qtde: number,
-    preco: number
+    origem:string,
+    qtde: number
 }
 export function Produto(prod: ProdutoProps) {
 
@@ -13,7 +13,7 @@ export function Produto(prod: ProdutoProps) {
             Nome: {prod.nome}
             Descrição: {prod.descricao}
             Qtde: {prod.qtde}
-            Preço: {prod.preco}
+            Origem: {prod.origem}
         </div>
     )
 }
